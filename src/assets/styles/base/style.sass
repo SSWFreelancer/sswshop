@@ -37,14 +37,32 @@ body
 .wrapper>main
   flex:1 1 auto
   padding-top: 172px
-  padding-bottom: 120px
   &.main-page
     padding-top: 130px
   @media(max-width: 1023px)
     padding-top: 80px
-    padding-bottom: 60px
     &.main-page
       padding-top: 57px
     
+.block
+  padding: 80px 0
+  @media(max-width: 1023px) 
+    padding: 50px 0
   
 
+.swiper-pagination
+  position: absolute
+  bottom: 14px
+  z-index: 1
+  display: flex
+  align-items: center
+  width: 100%
+  gap:14px
+  justify-content: center
+  & .swiper-pagination-bullet
+    margin: 0 !important
+    background-color: #fff
+    opacity: 0.7
+    transition: opacity 0.3s ease 0s
+    &.swiper-pagination-bullet-active
+      opacity: 1
