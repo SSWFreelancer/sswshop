@@ -3,16 +3,19 @@
     {
       "id": "elektroinstrumenty-i-texnika-dlya-sada",
       "category": "5fafab3aff786e49226649fc",
+      "name": "Электроинструменты и техника для сада",
       "image": "https://www.metabo.com/t3/fileadmin/metabo/zentrale_Inhalte/010_maschinen/Akku-Gartengeraete/202202_KeyVisual_Garten_1280x384.jpg"
     },
     {
       "id": "stroitelstvo-izmerenie-i-uborka",
       "category": "5fafab3aff786e49226649fc",
+      "name": "Строительство, измерение и уборка",
       "image": "https://instrumental.by/ru/files/news/image/0/0/1605771492.jpg"
     },
     {
       "id": "ruchnoj-instrument-i-osnastka",
       "category": "5fafab3aff786e49226649fc",
+      "name": "Ручной инструмент и оснастка",
       "image": "https://instrumentdon.ru/upload/iblock/36d/95isa20blmsp8ry3gdej71phcu3yng3f.jpg"
     }
   ]
