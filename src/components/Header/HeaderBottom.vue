@@ -6,7 +6,7 @@
         v-for="category in categories"
         :key="category.id"
       >
-        <a href="#">{{ category.name }}</a>
+        <span>{{ category.name }}</span>
         <div class="header-bottom__wrapper">
           <ul class="header-bottom__list">
             <li

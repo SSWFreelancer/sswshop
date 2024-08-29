@@ -2,7 +2,7 @@
   <div class="main" v-if="slides.length">
     <Swiper class="main__slider" loop :pagination="paginationOptions">
       <SwiperSlide v-for="slide in slides" :key="slide.id">
-        <router-link to="/">
+        <router-link to="/catalog">
           <img :src="slide.image" alt="" />
           <span>
             {{ slide.name }}

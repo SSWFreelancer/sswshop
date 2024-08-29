@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="wrapper">
     <Header />
-    <main class="main-page">
+    <main :class="$route.path == '/' ? 'main-page' : ''">
       <router-view />
     </main>
     <Footer />
