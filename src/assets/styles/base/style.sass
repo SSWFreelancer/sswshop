@@ -1,0 +1,50 @@
+@import "variables.sass"
+@import "nullstyle.sass"
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400500600700&display=swap')
+html
+  scroll-behavior: smooth
+
+body 
+  font-family: 'Montserrat', sans-serif
+  font-weight: 400
+  background-color: #ffffff
+  color: #0E0E0E
+  overflow-x: hidden
+  line-height: 1.3
+  @media(max-width: 1023px) 
+    &.lock
+      overflow: hidden
+
+#app
+  overflow: hidden
+  
+
+[class*=__container] 
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 20px
+  
+
+.wrapper
+  overflow: clip
+  display: flex
+  flex-direction: column
+  min-height: 100%
+  @media(max-width: 991px)
+    overflow: hidden
+  
+
+.wrapper>main
+  flex:1 1 auto
+  padding-top: 172px
+  padding-bottom: 120px
+  &.main-page
+    padding-top: 130px
+  @media(max-width: 1023px)
+    padding-top: 80px
+    padding-bottom: 60px
+    &.main-page
+      padding-top: 57px
+    
+  
+
