@@ -10,7 +10,7 @@
         <div class="header-bottom__wrapper">
           <ul class="header-bottom__list">
             <li
-              @click="toggleMenu"
+              @click="removeMenu"
               v-for="subCategory in category.subCategories"
               :key="subCategory.id"
             >
@@ -38,8 +38,8 @@ import { Category } from "./index";
 
 @Component
 export default class headerBottom extends Vue {
-  toggleMenu() {
-    this.$emit("toggleMenu");
+  removeMenu() {
+    this.$emit("removeMenu");
   }
   categories: Category[] = [];
 

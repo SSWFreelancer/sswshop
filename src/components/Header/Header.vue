@@ -1,7 +1,7 @@
 <template>
   <header class="header" :class="{ active: menuState, show: isScrolled }">
-    <HeaderTop @toggleMenu="toggleMenu" />
-    <headerBottom @toggleMenu="toggleMenu" />
+    <HeaderTop @toggleMenu="toggleMenu" @removeMenu="removeMenu" />
+    <headerBottom @removeMenu="removeMenu" />
   </header>
 </template>
 
@@ -43,6 +43,10 @@ export default class Header extends Vue {
     } else {
       document.body.classList.remove("lock");
     }
+  }
+  removeMenu() {
+    this.menuState = false;
+    document.body.classList.remove("lock");
   }
 }
 </script>
