@@ -1,7 +1,7 @@
 <template>
   <header class="header" :class="{ active: menuState, show: isScrolled }">
     <HeaderTop @toggleMenu="toggleMenu" />
-    <headerBottom />
+    <headerBottom @toggleMenu="toggleMenu" />
   </header>
 </template>
 
