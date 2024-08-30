@@ -2,13 +2,22 @@
   <div class="suggestions">
     <div class="suggestions__container">
       <Title>Наши предложения</Title>
+      <p class="loading" v-if="!isLoaded">Загрузка...</p>
       <div class="suggestions__cards">
         <Card
           v-for="suggestion in suggestions"
-          :key="suggestion._id"
-          :suggestion="suggestion"
+          :key="suggestion.id"
+          :product="suggestion"
         />
       </div>
+      <router-link
+        class="button"
+        :to="{
+          name: 'category',
+        }"
+      >
+        Весь каталог
+      </router-link>
     </div>
   </div>
 </template>
@@ -26,16 +35,18 @@ import Card from "../Card.vue";
 })
 export default class Suggestions extends Vue {
   suggestions: SuggestionsData[] = [];
+  isLoaded: boolean = false;
   created() {
     this.loadData();
   }
   async loadData() {
     try {
       const response = await fetch(
-        "https://sswfreelancer.github.io/sswshop/json/suggestions.json"
+        "https://course-angular.javascript.ru/api/products/suggestion"
       );
       const res = await response.json();
-      this.suggestions = res.suggestions;
+      this.suggestions = res.data.items;
+      this.isLoaded = true;
     } catch (error) {
       console.error("Ошибка при загрузке данных:", error);
     }

@@ -1,8 +1,6 @@
 @import "variables.sass"
 @import "nullstyle.sass"
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400500600700&display=swap')
-html
-  scroll-behavior: smooth
 
 body 
   font-family: 'Montserrat', sans-serif
@@ -37,17 +35,19 @@ body
 .wrapper>main
   flex:1 1 auto
   padding-top: 172px
+  padding-bottom: 80px
   &.main-page
     padding-top: 130px
   @media(max-width: 1023px)
     padding-top: 80px
+    padding-bottom: 50px
     &.main-page
       padding-top: 57px
     
 .block
-  padding: 80px 0
+  padding: 80px 0 0
   @media(max-width: 1023px) 
-    padding: 50px 0
+    padding: 50px 0 0
   
 
 .swiper-pagination
@@ -56,13 +56,41 @@ body
   z-index: 1
   display: flex
   align-items: center
+  flex-wrap: wrap
   width: 100%
   gap:14px
   justify-content: center
+  .product__sliders &
+    bottom: 10px
   & .swiper-pagination-bullet
     margin: 0 !important
     background-color: #fff
     opacity: 0.7
     transition: opacity 0.3s ease 0s
+    .product__sliders &
+      background: $red
     &.swiper-pagination-bullet-active
       opacity: 1
+
+.button
+  font-size: 1.25rem
+  display: block
+  text-align: center
+  border-radius: 4px
+  color: #fff
+  background: $red
+  padding: 15px
+  transition: all 0.3s ease 0s
+  max-width: 400px
+  margin: 40px auto 0
+  @media(max-width: 991px) 
+      margin-top: 30px
+  &:hover
+      background: $redhover
+
+.loading
+  color: $red
+  text-align: center
+  width: 100%
+  font-size: 24px
+  font-weight: 700

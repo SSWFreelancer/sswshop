@@ -13,7 +13,16 @@
               v-for="subCategory in category.subCategories"
               :key="subCategory.id"
             >
-              <router-link to="#">{{ subCategory.name }}</router-link>
+              <router-link
+                :to="{
+                  name: 'category',
+                  params: {
+                    id: subCategory._id,
+                    categoryName: subCategory.name,
+                  },
+                }"
+                >{{ subCategory.name }}</router-link
+              >
             </li>
           </ul>
         </div>
@@ -36,10 +45,10 @@ export default class headerBottom extends Vue {
   async loadData() {
     try {
       const response = await fetch(
-        "https://sswfreelancer.github.io/sswshop/json/categories.json"
+        "https://course-angular.javascript.ru/api/categories"
       );
       const res = await response.json();
-      this.categories = res.categories;
+      this.categories = res.data;
     } catch (error) {
       console.error("Ошибка при загрузке данных:", error);
     }

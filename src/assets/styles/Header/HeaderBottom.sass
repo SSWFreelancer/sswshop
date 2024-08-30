@@ -61,12 +61,12 @@
         border-right:4px solid transparent
         border-top:4px solid #000
         transition: all 0.3s ease 0s
-      @media(min-width: 1024px)
-        &:hover
-          color: $red
-          &:after
-            transform: rotate(-180deg)     
-            border-top-color: $red
+    @media(min-width: 1024px)
+      &:hover>span
+        color: $red
+        &:after
+          transform: rotate(-180deg)     
+          border-top-color: $red
 
       @media(max-width: 1023px)
         padding: 0

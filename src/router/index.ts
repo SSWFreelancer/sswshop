@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CatalogView from "../views/CatalogView.vue";
-
+import ProductView from "../views/ProductView.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -12,9 +12,18 @@ const routes: Array<RouteConfig> = [
     component: HomeView,
   },
   {
-    path: "/catalog",
-    name: "catalog",
+    path: "/catalog/:id?",
+    name: "category",
     component: CatalogView,
+    props: (route) => ({
+      categoryName: route.params.categoryName,
+    }),
+  },
+  {
+    path: "/product/:id?",
+    name: "product",
+    component: ProductView,
+    props: true,
   },
 ];
 
