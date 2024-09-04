@@ -29,7 +29,9 @@
       <div class="card__price">
         ${{ product.price.toLocaleString("en-EN") }}
       </div>
-      <button class="button">В корзину</button>
+      <button @click.prevent="addToCart(product)" class="button">
+        {{ isInCart ? "Добавлен" : "В корзину" }}
+      </button>
     </div>
   </router-link>
 </template>
@@ -40,6 +42,12 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 export default class Card extends Vue {
   @Prop() product!: any;
+  get isInCart() {
+    return this.$store.getters.isInCart(this.product._id);
+  }
+  addToCart(product: any) {
+    this.$store.dispatch("addToCart", product);
+  }
 }
 </script>
 

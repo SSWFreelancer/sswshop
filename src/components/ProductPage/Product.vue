@@ -50,7 +50,9 @@
             <div class="product__summ" v-if="product.price">
               <span> ${{ product.price.toLocaleString("en-EN") }}</span>
             </div>
-            <button>В корзину</button>
+            <button @click.prevent="addToCart(product)">
+              {{ isInCart ? "Добавлен" : "В корзину" }}
+            </button>
           </div>
         </div>
       </div>
@@ -139,7 +141,7 @@ export default class ProductPage extends Vue {
     el: ".swiper-pagination",
     clickable: true,
   };
-  product: Product[] = [];
+  product: Product | null = null;
 
   mounted() {
     const id = this.$route.params.id;
@@ -177,6 +179,15 @@ export default class ProductPage extends Vue {
       spaceBetween: 12,
     },
   };
+
+  get isInCart() {
+    return this.product
+      ? this.$store.getters.isInCart(this.product._id)
+      : false;
+  }
+  addToCart(product: any) {
+    this.$store.dispatch("addToCart", product);
+  }
 }
 </script>
 
