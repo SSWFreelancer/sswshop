@@ -70,18 +70,28 @@
         top: 8px
         background: none
         right: 8px
-        width: 20px
-        height: 20px
+        width: 25px
+        height: 25px
         cursor: pointer
+        border-radius: 50%
+        transition: all 0.3s ease 0s
+        background: transparent
         &:after, &:before
             content: ''
             position: absolute
             top: 50%
             left: 50%
-            width: 100%
+            width: 18px
             height: 2px
             background: $red
             border-radius: 4px
+            transition: all 0.3s ease 0s
+        @media(any-hover: hover) 
+            &:hover
+                background: $red
+                &:after, &::before
+                    background: #fff
+        
         &:after
             transform: translate(-50%,-50%) rotate(45deg)
         &:before
